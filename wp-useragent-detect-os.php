@@ -55,12 +55,6 @@ function wpua_detect_os()
 		$title = 'Arch Linux';
 		$code = 'archlinux';
 	}
-	elseif (preg_match('/BeOS/i', $useragent))
-	{
-		$link = 'http://en.wikipedia.org/wiki/BeOS';
-		$title = 'BeOS';
-		$code = 'beos';
-	}
 	elseif (preg_match('/CentOS/i', $useragent))
 	{
 		$link = 'http://www.centos.org/';
@@ -84,12 +78,6 @@ function wpua_detect_os()
 		$link = 'http://en.wikipedia.org/wiki/Google_Chrome_OS';
 		$title = 'Google Chrome OS';
 		$code = 'chromeos';
-	}
-	elseif (preg_match('/Crunchbang/i', $useragent))
-	{
-		$link = 'http://www.crunchbanglinux.org/';
-		$title = 'Crunchbang';
-		$code = 'crunchbang';
 	}
 	elseif (preg_match('/Debian/i', $useragent))
 	{
@@ -134,18 +122,6 @@ function wpua_detect_os()
 
 		$code = 'fedora';
 	}
-	elseif (preg_match('/Foresight\ Linux/i', $useragent))
-	{
-		$link = 'http://www.foresightlinux.org/';
-		$title = 'Foresight Linux';
-
-		if (preg_match('/Foresight\ Linux\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
-		{
-			$version = $regmatch[1];
-		}
-
-		$code = 'foresight';
-	}
 	elseif (preg_match('/FreeBSD/i', $useragent))
 	{
 		$link = 'http://www.freebsd.org/';
@@ -157,33 +133,6 @@ function wpua_detect_os()
 		$link = 'http://www.gentoo.org/';
 		$title = 'Gentoo';
 		$code = 'gentoo';
-	}
-	elseif (preg_match('/Inferno/i', $useragent))
-	{
-		$link = 'http://www.vitanuova.com/inferno/';
-		$title = 'Inferno';
-		$code = 'inferno';
-	}
-	elseif (preg_match('/IRIX/i', $useragent))
-	{
-		$link = 'http://www.sgi.com/partners/?/technology/irix/';
-		$title = 'IRIX Linux';
-
-		if (preg_match('/IRIX(64)?\ ([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
-		{
-			if ($regmatch[2])
-			{
-				$version = $regmatch[2];
-			}
-			if ($regmatch[1] && $wpua_show_version === 'full')
-			{
-				// Non-standard 64-bit detection
-				// If version isn't null append 64 bit, otherwise set it to x64
-				$version = (is_null($version)) ? 'x64' : "$version x64";
-			}
-		}
-
-		$code = 'irix';
 	}
 	elseif (preg_match('/Kanotix/i', $useragent))
 	{
@@ -215,18 +164,6 @@ function wpua_detect_os()
 		{
 			$code = 'kubuntu-2';
 		}
-	}
-	elseif (preg_match('/LindowsOS/i', $useragent))
-	{
-		$link = 'http://en.wikipedia.org/wiki/Lsongs';
-		$title = 'LindowsOS';
-		$code = 'lindowsos';
-	}
-	elseif (preg_match('/Linspire/i', $useragent))
-	{
-		$link = 'http://www.linspire.com/';
-		$title = 'Linspire';
-		$code = 'lindowsos';
 	}
 	elseif (preg_match('/Linux\ Mint/i', $useragent))
 	{
@@ -311,30 +248,6 @@ function wpua_detect_os()
 		$link = 'http://www.mageia.org/';
 		$title = 'Mageia';
 		$code = 'mageia';
-	}
-	elseif (preg_match('/Mandriva/i', $useragent))
-	{
-		$link = 'http://www.mandriva.com/';
-		$title = 'Mandriva';
-
-		if (preg_match('/mdv([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
-		{
-			$version = $regmatch[1];
-		}
-
-		$code = 'mandriva';
-	}
-	elseif (preg_match('/moonOS/i', $useragent))
-	{
-		$link = 'http://www.moonos.org/';
-		$title = 'moonOS';
-
-		if (preg_match('/moonOS\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
-		{
-			$version = $regmatch[1];
-		}
-
-		$code = 'moonos';
 	}
 	elseif (preg_match('/MorphOS/i', $useragent))
 	{
@@ -475,17 +388,11 @@ function wpua_detect_os()
 		$title = 'VectorLinux';
 		$code = 'vectorlinux';
 	}
-	elseif (preg_match('/Venenux/i', $useragent))
-	{
-		$link = 'http://www.venenux.org/';
-		$title = 'Venenux GNU Linux';
-		$code = 'venenux';
-	}
 	elseif (preg_match('/webOS/i', $useragent))
 	{
 		$link = 'http://en.wikipedia.org/wiki/WebOS';
-		$title = 'Palm webOS';
-		$code = 'palm';
+		$title = 'WebOS';
+		$code = 'webos';
 	}
 	elseif (preg_match('/Windows/i', $useragent)
 		|| preg_match('/WinNT/i', $useragent)
@@ -621,12 +528,6 @@ function wpua_detect_os()
 		{
 			$code = 'win-2';
 		}
-	}
-	elseif (preg_match('/Xandros/i', $useragent))
-	{
-		$link = 'http://www.xandros.com/';
-		$title = 'Xandros';
-		$code = 'xandros';
 	}
 	elseif (preg_match('/Xubuntu/i', $useragent))
 	{
