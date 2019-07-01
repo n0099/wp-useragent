@@ -238,6 +238,7 @@ defined( 'ABSPATH' ) or die( 'Cannot access pages directly.' );
 										<td>
 											<select id="wpua_icon_size" name="wpua_icon_size">
 												<option value="16" <?php if ($wpua_icon_size === '16') echo 'selected="selected"'; ?>><?php _e('16', 'wp-useragent'); ?></option>
+												<option value="20" <?php if ($wpua_icon_size === '20') echo 'selected="selected"'; ?>><?php _e('20', 'wp-useragent'); ?></option>
 												<option value="24" <?php if ($wpua_icon_size === '24') echo 'selected="selected"'; ?>><?php _e('24', 'wp-useragent'); ?></option>
 											</select> <?php _e('pixels', 'wp-useragent'); ?>
 										</td>
