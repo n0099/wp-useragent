@@ -33,6 +33,13 @@ function wpua_detect_webbrowser()
 		$version = '';
 		$code = '360se';
 	}
+	elseif (preg_match('/360ee/i', $useragent))
+	{
+		$link = 'http://chrome.360.cn/';
+		$title = '360 Speed Browser';
+		$version = '';
+		$code = '360ee';
+	}
 	elseif (preg_match('/MRCHROME/i', $useragent))
 	{
 		$link = 'http://amigo.mail.ru/';
@@ -111,6 +118,14 @@ function wpua_detect_webbrowser()
 		$title = 'Comodo Dragon';
 		$version = wpua_detect_browser_version('Dragon');
 		$code = 'comodo-dragon';
+	}
+	elseif (preg_match('/Chrome/i', $useragent))
+		&& preg_match('/Cent\//i', $useragent))
+	{
+		$link = 'http://www.centbrowser.com';
+		$title = 'Cent Browser';
+		$version = wpua_detect_browser_version('Cent\/');
+		$code = 'centbrowser';
 	}
 	elseif (preg_match('/CrMo/i', $useragent))
 	{
