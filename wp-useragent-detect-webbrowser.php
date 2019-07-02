@@ -119,7 +119,7 @@ function wpua_detect_webbrowser()
 		$version = wpua_detect_browser_version('Dragon');
 		$code = 'comodo-dragon';
 	}
-	elseif (preg_match('/Chrome/i', $useragent))
+	elseif (preg_match('/Chrome/i', $useragent)
 		&& preg_match('/Cent\//i', $useragent))
 	{
 		$link = 'http://www.centbrowser.com';
@@ -194,6 +194,20 @@ function wpua_detect_webbrowser()
 		$link = 'http://www.fluidapp.com/';
 		$title = 'Fluid';
 		$code = 'fluid';
+	}
+	elseif (preg_match('/Focus/i', $useragent))
+	{
+		$link = 'http://www.mozilla.org/en-US/firefox/focus/';
+		$title = 'Firefox Focus';
+		$version = wpua_detect_browser_version('Focus');
+		$code = 'firefox-focus';
+	}
+	elseif (preg_match('/FxiOS/i', $useragent))
+	{
+		$link = 'http://www.mozilla.org/firefox/ios/';
+		$title = 'Firefox for iOS';
+		$version = wpua_detect_browser_version('FxiOS');
+		$code = 'firefox';
 	}
 	elseif (preg_match('/Galeon/i', $useragent))
 	{
@@ -673,8 +687,14 @@ function wpua_detect_webbrowser()
 	{
 		$link = 'http://www.ucweb.com/';
 		$title = 'UC Browser';
-		$version = wpua_detect_browser_version('UC Browser');
 		$code = 'ucbrowser';
+	}
+	elseif (preg_match('/UCMini/i', $useragent))
+	{
+		$link = 'http://www.ucweb.com/';
+		$title = 'UC Browser Mini';
+		$version = wpua_detect_browser_version('UCMini');
+		$code = 'ucbrowser-mini';
 	}
 	elseif (preg_match('/UCWEB/i', $useragent))
 	{
