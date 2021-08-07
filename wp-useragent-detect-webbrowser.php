@@ -812,14 +812,36 @@ function wpua_detect_webbrowser()
 		$code = 'zipzap';
 	}
 
-	elseif (preg_match('/Edge/i', $useragent)
-		&& preg_match('/Chrome/i', $useragent)
-		&& preg_match('/Safari/i', $useragent))
+	elseif (preg_match('/Edge\//i', $useragent) || preg_match('/Edg\//i', $useragent) || preg_match('/EdgiOS\//i', $useragent) || preg_match('/EdgA\//i', $useragent))
 	{
-		$link = 'http://en.wikipedia.org/wiki/Microsoft_Edge';
+		$link = 'https://www.microsoft.com/en-us/edge';
 		$title = 'Microsoft Edge';
-		$version = wpua_detect_browser_version('Edge');
-		$code = 'msedge12';
+		
+		if (preg_match('/Edge\//i', $useragent))
+		{
+			// Edge (MSIE rebrand and rewrite)
+			$version = wpua_detect_browser_version('Edge');
+			$code = 'edge-old';
+		}
+		else
+		{
+			if (preg_match('/EdgiOS\//i', $useragent))
+			{
+				// Edge for iOS
+				$version = wpua_detect_browser_version('EdgiOS');
+			}
+			elseif (preg_match('/EdgA\//i', $useragent))
+			{
+				// Edge for Android
+				$version = wpua_detect_browser_version('EdgA');
+			}
+			else
+			{
+				// Edge (Chromium)
+				$version = wpua_detect_browser_version('Edg');
+			}
+			$code = 'edge';
+		}
 	}
 	elseif (preg_match('/Chrome/i', $useragent))
 	{
