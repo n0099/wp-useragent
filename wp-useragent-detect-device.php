@@ -64,20 +64,6 @@ function wpua_detect_device()
 		$code = 'iphone';
 	}
 
-	// BenQ-Siemens (Openwave)
-	elseif (preg_match('/[^M]SIE/i', $useragent))
-	{
-		$link = 'http://en.wikipedia.org/wiki/BenQ-Siemens';
-		$title = 'BenQ-Siemens';
-
-		if (preg_match('/[^M]SIE-([.0-9a-zA-Z]+)\//i', $useragent, $regmatch))
-		{
-			$version = $regmatch[1];
-		}
-
-		$code = 'benq-siemens';
-	}
-
 	// BlackBerry
 	elseif (preg_match('/BlackBerry/i', $useragent))
 	{
@@ -92,32 +78,18 @@ function wpua_detect_device()
 		$code = 'blackberry';
 	}
 
-	// Dell
-	elseif (preg_match('/Dell Mini 5/i', $useragent))
-	{
-		$link = 'http://en.wikipedia.org/wiki/Dell_Streak';
-		$title = 'Dell Mini 5';
-		$code = 'dell';
-	}
-	elseif (preg_match('/Dell Streak/i', $useragent))
-	{
-		$link = 'http://en.wikipedia.org/wiki/Dell_Streak';
-		$title = 'Dell Streak';
-		$code = 'dell';
-	}
-	elseif (preg_match('/Dell/i', $useragent))
-	{
-		$link = 'http://en.wikipedia.org/wiki/Dell';
-		$title = 'Dell';
-		$code = 'dell';
-	}
-
 	// Google
-	elseif (preg_match('/Nexus One/i', $useragent))
+	elseif (preg_match('/Nexus/i', $useragent))
 	{
-		$link = 'http://en.wikipedia.org/wiki/Nexus_One';
-		$title = 'Nexus One';
-		$code = 'google-nexusone';
+		$link = 'http://en.wikipedia.org/wiki/Google_Nexus';
+		$title = 'Google Nexus';
+		$code = 'google-nexus';
+	}
+	elseif (preg_match('/Pixel/i', $useragent))
+	{
+		$link = 'http://en.wikipedia.org/wiki/Pixel_(smartphone)';
+		$title = 'Google Pixel';
+		$code = 'google-pixel';
 	}
 
 	// HTC
@@ -243,7 +215,7 @@ function wpua_detect_device()
 		$link = 'http://www.microsoft.com/windowsphone/';
 		$title = 'Windows Phone';
 		$version = '8.1';
-		$code = 'wp7';
+		$code = 'wp81';
 	}
 	elseif (preg_match('/Windows Phone OS 8/i', $useragent)
 		|| preg_match('/Windows Phone 8/i', $useragent)
@@ -252,7 +224,7 @@ function wpua_detect_device()
 		$link = 'http://www.microsoft.com/windowsphone/';
 		$title = 'Windows Phone';
 		$version = '8';
-		$code = 'wp7';
+		$code = 'wp8';
 	}
 	elseif (preg_match('/Windows Phone 10/i', $useragent)
 		|| preg_match('/WP10/i', $useragent))
@@ -376,40 +348,6 @@ function wpua_detect_device()
 		$link = 'http://www.s60.com/';
 		$title = 'Nokia Series60';
 		$code = 'nokia';
-	}
-
-	// OLPC (One Laptop Per Child)
-	elseif (preg_match('/OLPC/i', $useragent))
-	{
-		$link = 'http://www.laptop.org/';
-		$title = 'OLPC (XO)';
-		$code = 'olpc';
-	}
-
-	// Palm
-	elseif (preg_match('/\ Pixi\//i', $useragent))
-	{
-		$link = 'http://en.wikipedia.org/wiki/Palm_Pixi';
-		$title = 'Palm Pixi';
-		$code = 'palm';
-	}
-	elseif (preg_match('/\ Pre\//i', $useragent))
-	{
-		$link = 'http://en.wikipedia.org/wiki/Palm_Pre';
-		$title = 'Palm Pre';
-		$code = 'palm';
-	}
-	elseif (preg_match('/Palm/i', $useragent))
-	{
-		$link = 'http://www.palm.com/';
-		$title = 'Palm';
-		$code = 'palm';
-	}
-	elseif (preg_match('/wp-webos/i', $useragent))
-	{
-		$link = 'http://www.palm.com/';
-		$title = 'Palm';
-		$code = 'palm';
 	}
 
 	// Playstation

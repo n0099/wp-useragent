@@ -57,26 +57,6 @@ function wpua_detect_trackback()
 		$title = 'Meneame';
 		$code = 'meneame';
 	}
-	elseif (preg_match('/MovableType\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
-	{
-		$link = 'http://www.movabletype.org/';
-		$title = 'MovableType';
-		$code = 'movabletype';
-		$version = $regmatch[1];
-	}
-	elseif (preg_match('/Peach\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
-	{
-		$link = 'http://www.psych.neu.edu/faculty/y.petrov/Software/PEACH/';
-		$title = 'Peach';
-		$code = 'null';
-		$version = $regmatch[1];
-	}
-	elseif (preg_match('/pligg/i', $useragent))
-	{
-		$link = 'http://www.pligg.com/';
-		$title = 'Pligg';
-		$code = 'pligg';
-	}
 	elseif (preg_match('/Python-urllib\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
 	{
 		$link = 'http://docs.python.org/library/urllib.html';
@@ -84,22 +64,15 @@ function wpua_detect_trackback()
 		$code = 'null';
 		$version = $regmatch[1];
 	}
-	elseif (preg_match('/Snoopy\ v([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
-	{
-		$link = 'http://sourceforge.net/projects/snoopy/';
-		$title = 'Snoopy';
-		$code = 'null';
-		$version = $regmatch[1];
-	}
 	elseif (preg_match('/SOAP::/i', $useragent))
 	{
 		$link = 'http://en.wikipedia.org/wiki/SOAP';
 		$title = 'SOAP (Simple Object Access Protocol)';
-		$code = 'null';
+		$code = 'soap';
 	}
 	elseif (preg_match('/Typepad/i', $useragent))
 	{
-		$link = 'http://www.typepad.com/';
+		$link = 'https://www.typepad.com/';
 		$title = 'Typepad';
 		$code = 'typepad';
 	}
@@ -120,7 +93,7 @@ function wpua_detect_trackback()
 	{
 		$link = 'http://www.xmlrpc.com/';
 		$title = 'XML-RPC';
-		$code = 'null';
+		$code = 'xml-rpc';
 	}
 	else
 	{
