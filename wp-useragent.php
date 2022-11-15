@@ -318,8 +318,10 @@ function wpua_get_icon($title, $code, $type)
 		$img_style = ($wpua_icon_style === 'css') ? 'class="'.$wpua_icon_style_input.'"' : 'style="'.$wpua_icon_style_input.'"';
 
 		// Set the img to display browser/os/device. Ex. http://blogurl/plugins/plugin-name/size/net-os-device/code.png
-		$img_src = $wpua_img_url.$wpua_icon_size.$type.$code.'.png';
-
+// 		$img_src = $wpua_img_url.$wpua_icon_size.$type.$code.'.png';
+/* Change png to svg */
+$img_src = $wpua_img_url.$wpua_icon_size.$type.$code.'.svg';
+		
 		// Select the correct closing tag based on doctype
 		$img_close = ($wpua_doctype === 'html') ? '' : ' /';
 
